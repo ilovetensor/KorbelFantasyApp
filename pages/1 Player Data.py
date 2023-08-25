@@ -8,7 +8,6 @@ This is a temporary script file.
 #Import package
 import streamlit as st
 import pandas as pd
-import seaborn as sns
 
 #Set titles and sidebar header
 st.set_page_config(page_title="Player Data", page_icon="📊")
