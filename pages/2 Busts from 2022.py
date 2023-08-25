@@ -16,7 +16,9 @@ pd.set_option('display.max_colwidth', 0)
 
 
 
-df = pd.read_excel(r'C:/Users/edwar/22 busts.xlsx')
+url = 'https://raw.githubusercontent.com/hankshackleford/KorbelFantasyApp/main/22%20busts.csv'
+df = pd.read_csv(url)
+print(df)
 
 df.style.set_properties(
     **{
