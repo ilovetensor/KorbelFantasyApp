@@ -24,8 +24,8 @@ st.text("VOLA: Value Over Last Starter: number of points greater than the last s
 #df.set_index('PLAYER', inplace=True)
 #print(df)
 
-url = 'https://github.com/hankshackleford/KorbelFantasyApp/raw/main/FFL%2023.xlsx'
-df = pd.read_excel(url, sheet_name='All')
+url = 'https://raw.githubusercontent.com/hankshackleford/KorbelFantasyApp/main/FF23_for_github.csv'
+df = pd.read_csv(url)
 print(df)
 
 
