@@ -8,6 +8,7 @@ This is a temporary script file.
 #Import package
 import streamlit as st
 import pandas as pd
+import seaborn as sns
 
 #Set titles and sidebar header
 st.set_page_config(page_title="Player Data", page_icon="📊")
@@ -19,10 +20,15 @@ st.text("VOLA: Value Over Last Starter: number of points greater than the last s
 
 
 #Read in data
-df = pd.read_excel(r'C:/Users/edwar/FFL 23.xlsx', sheet_name='All')
-del df['NAME']
+#df = pd.read_excel(r'C:/Users/edwar/FFL 23.xlsx', sheet_name='All')
+#del df['NAME']
 #df.set_index('PLAYER', inplace=True)
+#print(df)
+
+url = 'https://github.com/hankshackleford/KorbelFantasyApp/raw/main/FFL%2023.xlsx'
+df = pd.read_excel(url, sheet_name='All')
 print(df)
+
 
 #Set year and position selectors
 selected_yr = st.sidebar.selectbox('Year',list(reversed(range(2022,2024))))
