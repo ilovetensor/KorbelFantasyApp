@@ -13,6 +13,8 @@ import pandas as pd
 st.set_page_config(page_title="Player Data", page_icon="📊")
 st.title('Fantasy Football Analytics: Player Data')
 st.sidebar.header('User Selections')
+st.text("Here you will find 2022 actual data (including a draft recap) as well as 2023 projections, supplied by FantasyPros")
+st.text("This page also contains advanced statistics, explained further below")
 st.text("VORP: Value Over Replacement Player: number of points greater or less than the median starter in their position")
 st.text("VONA: Value Over Next Available: number of points greater than the next available starter in their position")
 st.text("VOLA: Value Over Last Starter: number of points greater than the last starter in their position")
