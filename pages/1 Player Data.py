@@ -19,13 +19,7 @@ st.text("VORP: Value Over Replacement Player: number of points greater or less t
 st.text("VONA: Value Over Next Available: number of points greater than the next available starter in their position")
 st.text("VOLA: Value Over Last Starter: number of points greater than the last starter in their position")
 
-
-#Read in data
-#df = pd.read_excel(r'C:/Users/edwar/FFL 23.xlsx', sheet_name='All')
-#del df['NAME']
-#df.set_index('PLAYER', inplace=True)
-#print(df)
-
+#Read in data from Github
 url = 'https://raw.githubusercontent.com/hankshackleford/KorbelFantasyApp/main/FF23_for_github.csv'
 df = pd.read_csv(url)
 print(df)
