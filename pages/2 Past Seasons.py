@@ -8,7 +8,8 @@ Created on Fri Aug 25 23:21:37 2023
 #Import package
 import streamlit as st
 import pandas as pd
-import json
+import plotly.express as px
+
 
 #Set titles and sidebar header
 st.set_page_config(page_title="History of Past Seasons", page_icon="🏆")
@@ -37,12 +38,6 @@ pag_min=df_selected['PA/G'].min()
 pag_max=df_selected['PA/G'].max()
 diff_min=df_selected['DIFF'].min()
 diff_max=df_selected['DIFF'].max()
-#moves_min=df_selected['MOVES'].min()
-#moves_max=df_selected['MOVES'].max()
-
-
-
-
 
 #Data Editor
 st.data_editor(
@@ -70,12 +65,30 @@ st.data_editor(
         "DIFF": st.column_config.ProgressColumn(
             "DIFF",
             help="Average Difference Between Points For and Allowed Per Game",
-            format="%6.1f", min_value=diff_min,max_value=diff_max),
-        #"MOVES": st.column_config.ProgressColumn(
-         #   "MOVES",
-          #  help="Total Number of Moves Made In Season",
-           # format="%6.0f", min_value=moves_min,max_value=moves_max)         
+            format="%6.1f", min_value=diff_min,max_value=diff_max),       
         },
     hide_index=True,
     width=1500,
 )
+
+#setting palette
+colors=['#1A8A41','#521052']
+
+
+win_loss = px.bar(
+    data_frame = df_selected,
+    x = "Owner",
+    y = ["Wins","Losses"],
+    color_discrete_sequence=colors,
+    orientation = "v",
+    barmode = 'group',
+    opacity= .8,
+    title='Wins and Losses',
+)
+st.plotly_chart(win_loss)
+
+moves = px.bar(df_selected, x='Owner', y='MOVES',
+              opacity=.8,
+              color_discrete_sequence=colors,
+              title='Moves Per Season',)
+st.plotly_chart(moves)
