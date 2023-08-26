@@ -25,4 +25,5 @@ print(df)
 selected_yr = st.sidebar.selectbox('Year',list(reversed(range(2015,2024))))
 
 df_selected =  df[(df.Year == selected_yr)]
-st.dataframe(data=df)
+st.dataframe(data=df_selected)
+
