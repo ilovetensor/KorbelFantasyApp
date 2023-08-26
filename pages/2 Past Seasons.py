@@ -8,6 +8,7 @@ Created on Fri Aug 25 23:21:37 2023
 #Import package
 import streamlit as st
 import pandas as pd
+import json
 
 #Set titles and sidebar header
 st.set_page_config(page_title="History of Past Seasons", page_icon="🏆")
@@ -38,6 +39,9 @@ diff_min=df_selected['DIFF'].min()
 diff_max=df_selected['DIFF'].max()
 moves_min=df_selected['MOVES'].min()
 moves_max=df_selected['MOVES'].max()
+json.dumps(df_selected, default=str)
+
+
 
 
 #Data Editor
