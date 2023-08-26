@@ -12,7 +12,6 @@ import pandas as pd
 #Set titles and sidebar header
 st.set_page_config(page_title="History of Past Seasons", page_icon="🏆")
 st.title('Korbel Fantasy Football Past Seasons')
-st.sidebar.header('User Selections')
 st.text("Here you will find league history from 2015-2022")
 
 
